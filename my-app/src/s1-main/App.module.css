@@ -1,0 +1,15 @@
+.App {
+    --header_height: 60px;
+}
+
+.hw {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /*align-items: baseline;*/
+}
+
+.hwTitle {
+    margin: 10px;
+    font-weight: bold;
+}
