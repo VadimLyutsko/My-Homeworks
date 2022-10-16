@@ -44,9 +44,10 @@ export const filterAffairs = (affairs: AffairType[], filter: FilterType): Affair
             return affairs.filter(t => t.priority===filter);
         case 'low':
             return affairs.filter(t => t.priority===filter);
-    }
-    return affairs
+        case 'all':
+            return affairs
 
+    }
 };
 export const deleteAffair = (affairs: AffairType[], _id: number): AffairType[] => { // need to fix any
 
