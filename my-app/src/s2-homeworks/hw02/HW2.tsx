@@ -36,8 +36,17 @@ const defaultAffairs: AffairType[] = [ // need to fix any
 
 // pure helper functions
 export const filterAffairs = (affairs: AffairType[], filter: FilterType): AffairType[] => { // need to fix any
+// // return  affairs.filter(item => item.priority===filter?item.priority:''); // need to fix
+    switch (filter) {
+        case 'middle':
+            return affairs.filter(t => t.priority===filter);
+        case 'high':
+            return affairs.filter(t => t.priority===filter);
+        case 'low':
+            return affairs.filter(t => t.priority===filter);
+    }
+    return affairs
 
-    return  affairs.filter(item => item.priority !== filter); // need to fix
 };
 export const deleteAffair = (affairs: AffairType[], _id: number): AffairType[] => { // need to fix any
 
