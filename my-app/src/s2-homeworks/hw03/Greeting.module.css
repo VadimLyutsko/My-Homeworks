@@ -1,36 +1,127 @@
 .greetingForm {
+    margin: 25px 0 150px 0;
 }
 
 .inputAndButtonContainer {
+    display: flex;
+    width: 514px;
+    min-height: 36px;
+    align-items: baseline;
+    justify-content: space-between;
 }
 
 .error {
+    margin-top: 10px;
     color: red;
 }
 
 .input {
+    padding-left: 12px;
+    width: 372px;
+    height: 36px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    border: 1px solid #D1D1D1;
 }
 
 .input:focus {
+    box-sizing: border-box;
+    border: 1px solid #D1D1D1;
+    border-radius: 5px;
 }
 
 .errorInput {
+    width: 372px;
+    height: 36px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    border: 1px solid #CC0000;
 }
 
 .button {
+    padding: 5px 24px;
+    gap: 10px;
+    width: 78px;
+    height: 36px;
+    left: 454px;
+    top: 1020px;
+    color: #FFFFFF;
+    background: #0066CC;
+    border-radius: 3px;
+    border: 0;
 }
 
 .button:focus {
+    gap: 10px;
+    width: 78px;
+    height: 36px;
+    left: 454px;
+    top: 1020px;
+    color: #FFFFFF;
+    background: #0066CC;
+    opacity: 0.5;
+    border-radius: 3px;
 }
 
 .button:active {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 24px;
+    gap: 10px;
+    width: 78px;
+    height: 36px;
+    left: 454px;
+    top: 1020px;
+    color: #FFFFFF;
+    background: #0066CC;
+    opacity: 0.5;
+    border-radius: 3px;
 }
 
 .button:disabled {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 24px;
+    gap: 10px;
+    width: 78px;
+    height: 36px;
+    left: 454px;
+    top: 1020px;
+    color: #FFFFFF;
+    background: #0066CC;
+    opacity: 0.5;
+    border-radius: 3px;
 }
 
 .text {
+    width: 138px;
+    height: 17px;
+    left: 70px;
+    top: 994px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+    color: rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px;
 }
 
 .greeting {
+    width: 144px;
+    height: 17px;
+    left: 70px;
+    top: 1066px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+    margin-top: 10px;
 }
