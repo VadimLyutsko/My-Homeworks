@@ -40,6 +40,7 @@
 .button:active {
     background: var(--color);
     color: white;
+
 }
 
 .active {
@@ -49,6 +50,7 @@
 
 .affairs {
     display: flex;
+    /*!*flex-direction: column;*!  Для постановки в столбик*/
     gap: 17px;
     flex-wrap: wrap;
     max-width: 450px;
