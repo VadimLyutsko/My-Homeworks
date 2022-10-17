@@ -4,12 +4,13 @@
 }
 
 .hw {
-    margin-top: 50px;
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
 .hwTitle {
+    margin: 20px 0;
     font-weight: bold;
 }
