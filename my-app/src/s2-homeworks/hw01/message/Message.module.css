@@ -53,6 +53,6 @@
 .corner{
     width: 0;
     height: 0;
-    border-bottom: 24px solid #0066CC;
-    border-right: 24px solid transparent;
+    border-bottom: 15px solid #0066CC;
+    border-right: 15px solid transparent;
 }

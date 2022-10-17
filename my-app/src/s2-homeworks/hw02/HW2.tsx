@@ -17,7 +17,7 @@ import s2 from '../../s1-main/App.module.css';
 * */
 
 // types
-export type AffairPriorityType = 'low' | 'middle' | 'high'// need to fix any
+export type AffairPriorityType = 'low' | 'high' | 'middle'// need to fix any
 export type AffairType = {
     _id: number // need to fix any
     name: string // need to fix any
@@ -36,22 +36,27 @@ const defaultAffairs: AffairType[] = [ // need to fix any
 
 // pure helper functions
 export const filterAffairs = (affairs: AffairType[], filter: FilterType): AffairType[] => { // need to fix any
-// // return  affairs.filter(item => item.priority===filter?item.priority:''); // need to fix
-    switch (filter) {
-        case 'middle':
-            return affairs.filter(t => t.priority===filter);
-        case 'high':
-            return affairs.filter(t => t.priority===filter);
-        case 'low':
-            return affairs.filter(t => t.priority===filter);
-        case 'all':
-            return affairs
 
-    }
+    return affairs.filter(item => filter === 'all' ? item : item.priority === filter);   // need to fix
+
+    // return affairs.filter(item=>{
+    //     if(item.priority===filter){
+    //         return item.priority===filter
+    //     }else if(filter==='all'){
+    //         return item
+    //     }
+    // }) // need to fix
 };
 export const deleteAffair = (affairs: AffairType[], _id: number): AffairType[] => { // need to fix any
 
-    return affairs.filter(item => item._id !==_id); // need to fix  ??????????
+        return affairs.filter(item => item._id===_id?item._id!==_id:item)   // need to fix
+
+    // return affairs.filter(item => {
+    //     if (item._id === _id) {
+    //         return item._id !== _id;
+    //     }
+    //     return item;
+    // });
 };
 
 function HW2() {
@@ -61,7 +66,7 @@ function HW2() {
     const filteredAffairs = filterAffairs(affairs, filter);
     const deleteAffairCallback = (_id: number) => { // need to fix any
         // need to fix
-        setAffairs(deleteAffair(affairs, _id))
+        setAffairs(deleteAffair(affairs, _id));
     };
 
     return (
