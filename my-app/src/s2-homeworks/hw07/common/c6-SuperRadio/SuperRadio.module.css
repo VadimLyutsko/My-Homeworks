@@ -1,4 +1,19 @@
 .radio {
+
+    width: 80px;
+    height: 20px;
+    left: 393px;
+    top: 589px;
+
+    /*font-family: 'Montserrat';*/
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    /* identical to box height */
+
+
+    color: #000000;
 }
 
 .radio::before {

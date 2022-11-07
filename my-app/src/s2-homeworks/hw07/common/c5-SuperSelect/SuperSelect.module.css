@@ -1,9 +1,32 @@
 .select {
+    box-sizing: border-box;
+    width: 165px;
+    height: 24px;
+    left: 70px;
+    top: 588px;
+    background: #FFFFFF;
+    border: 1px solid #C2C2C2;
+    border-radius: 2px;
+    margin-right: 150px;
 }
 
 .select:focus {
+    box-sizing: border-box;
+    width: 165px;
+    height: 24px;
+    left: 70px;
+    top: 588px;
+    background: #C2C2C2;
+    border: 1px solid #C2C2C2;
+    border-radius: 2px;
 }
 
 
 .option:hover {
+    width: 179px;
+    height: 1px;
+    left: 71px;
+    top: 668px;
+
+    background: #C2C2C2;
 }
