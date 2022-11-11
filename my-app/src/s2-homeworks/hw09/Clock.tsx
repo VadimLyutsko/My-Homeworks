@@ -14,7 +14,7 @@ function Clock() {
         // пишут студенты // запустить часы (должно отображаться реальное время, а не +1)
         // сохранить ид таймера (https://learn.javascript.ru/settimeout-setinterval#setinterval)
         // 'date->time' || <br/>`
-        stop();
+        stop()
         const id: number = +setInterval(() => {
             setDate(new Date(restoreState('hw9-date', Date.now())));
         }, 1000);
@@ -35,7 +35,7 @@ function Clock() {
     };
 
 
-    const stringTime = `${date.getHours() < 10 ? '0' + date.getHours() : date.getHours()}.${date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes()}.${date.getSeconds() < 10 ? '0' + date.getSeconds() : date.getSeconds()}` ||
+    const stringTime = `${date.getHours() < 10 ? '0' + date.getHours() : date.getHours()}:${date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes()}:${date.getSeconds() < 10 ? '0' + date.getSeconds() : date.getSeconds()}` ||
         <br/>; // часы24:минуты:секунды (01:02:03)/(23:02:03)/(24:00:00)/(00:00:01) // пишут студенты
 
     const stringDate = Intl.DateTimeFormat('ru', {
