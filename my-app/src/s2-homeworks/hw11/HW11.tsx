@@ -17,12 +17,11 @@ function HW11() {
 
     const change = (event: Event, value: number | number[]) => {
         // пишет студент // если пришёл массив - сохранить значения в оба useState, иначе в первый
-
-        if (typeof value === 'object') {
-            setValue1(value[0])
-            setValue2(value[1])
-        }else {
-            setValue1(value)
+        if (typeof value !== 'number') {
+            setValue1(value[0]);
+            setValue2(value[1]);
+        } else {
+            setValue1(value);
         }
     };
 
@@ -46,8 +45,8 @@ function HW11() {
                         <SuperRange
                             id={'hw11-double-slider'}
                             // сделать так чтоб value1/2 изменялось // пишет студент
-                            value={value2}
-                            onChange={(e)=>{change(e,[value1,value2] )}}
+                            value={[value1, value2]}
+                            onChange={change}
                         />
                         <span id={'hw11-value-2'} className={s.number}>{value2}</span>
                     </div>
