@@ -1,8 +1,11 @@
 .container {
+    width: fit-content;
 }
 
 .wrapper {
 }
 
 .number {
+    padding: 10px;
+    color: #a6aada;
 }
