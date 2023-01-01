@@ -1,22 +1,37 @@
 .buttonsContainer {
+    width: 800px;
+    display: flex;
+    justify-content: space-between;
+    margin: 25px 0;
 }
 
 .responseContainer {
+    width: 1200px;
+    min-width:80%;
+    display: flex;
+    align-items: center;
+    /*justify-content: space-around;*/
 }
 
 .imageContainer {
+    margin-left: 150px;
 }
 
 .image {
+    margin-bottom: 50px;
 }
 
 .textContainer{
+    margin-left: 150px;
 }
 
 .code {
+    font-size: 30px;
+
 }
 
 .text {
+    font-size: 18px;
 }
 .info {
 }

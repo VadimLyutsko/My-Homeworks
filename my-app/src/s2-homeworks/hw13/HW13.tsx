@@ -1,12 +1,12 @@
-import React, {useState} from 'react'
-import s2 from '../../s1-main/App.module.css'
-import s from './HW13.module.css'
-import SuperButton from '../hw04/common/c2-SuperButton/SuperButton'
-import axios from 'axios'
-import success200 from './images/200.svg'
-import error400 from './images/400.svg'
-import error500 from './images/500.svg'
-import errorUnknown from './images/error.svg'
+import React, {useState} from 'react';
+import s2 from '../../s1-main/App.module.css';
+import s from './HW13.module.css';
+import SuperButton from '../hw04/common/c2-SuperButton/SuperButton';
+import axios from 'axios';
+import success200 from './images/200.svg';
+import error400 from './images/400.svg';
+import error500 from './images/500.svg';
+import errorUnknown from './images/error.svg';
 
 /*
 * 1 - дописать функцию send
@@ -15,35 +15,57 @@ import errorUnknown from './images/error.svg'
 * */
 
 const HW13 = () => {
-    const [code, setCode] = useState('')
-    const [text, setText] = useState('')
-    const [info, setInfo] = useState('')
-    const [image, setImage] = useState('')
+    const [code, setCode] = useState('');
+    const [text, setText] = useState('');
+    const [info, setInfo] = useState('');
+    const [image, setImage] = useState('');
 
     const send = (x?: boolean | null) => () => {
         const url =
             x === null
                 ? 'https://xxxxxx.ccc' // имитация запроса на не корректный адрес
-                : 'https://incubator-personal-page-back.herokuapp.com/api/3.0/homework/test'
+                : 'https://incubator-personal-page-back.herokuapp.com/api/3.0/homework/test';
 
-        setCode('')
-        setImage('')
-        setText('')
-        setInfo('...loading')
+        setCode('');
+        setImage('');
+        setText('');
+        setInfo('...loading');
 
         axios
             .post(url, {success: x})
             .then((res) => {
-                setCode('Код 200!')
-                setImage(success200)
+                setCode('Код 200!');
+                setImage(success200);
+                setInfo('');
+                setText('...всё ок) код 200 - обычно означает что скорее всего всё ок)');
                 // дописать
 
             })
             .catch((e) => {
                 // дописать
+                console.log(e);
+                if (e.request.status === 400) {
+                    setCode('Error!');
+                    setImage(error400);
+                    setInfo('');
+                    setText('Network Error AxiosError');
+                }
+                if (e.request.status === 500) {
+                    setCode('Ошибка 500!');
+                    setImage(error500);
+                    setInfo('');
+                    setText('эмитация ошибки на сервере\n' +
+                        'ошибка 500 - обычно означает что что-то сломалось на сервере, например база данных)');
+                }
+                if (e.request.status === 0) {
+                    setCode('Error!');
+                    setImage(errorUnknown);
+                    setInfo('');
+                    setText('Network Error AxiosError');
+                }
 
-            })
-    }
+            });
+    };
 
     return (
         <div id={'hw13'}>
@@ -56,6 +78,7 @@ const HW13 = () => {
                         onClick={send(true)}
                         xType={'secondary'}
                         // дописать
+                        disabled={info === '...loading' && true}
 
                     >
                         Send true
@@ -65,6 +88,7 @@ const HW13 = () => {
                         onClick={send(false)}
                         xType={'secondary'}
                         // дописать
+                        disabled={info === '...loading' && true}
 
                     >
                         Send false
@@ -74,6 +98,7 @@ const HW13 = () => {
                         onClick={send(undefined)}
                         xType={'secondary'}
                         // дописать
+                        disabled={info === '...loading' && true}
 
                     >
                         Send undefined
@@ -83,6 +108,7 @@ const HW13 = () => {
                         onClick={send(null)} // имитация запроса на не корректный адрес
                         xType={'secondary'}
                         // дописать
+                        disabled={info === '...loading' && true}
 
                     >
                         Send null
@@ -108,7 +134,7 @@ const HW13 = () => {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default HW13
+export default HW13;
