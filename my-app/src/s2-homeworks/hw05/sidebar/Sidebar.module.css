@@ -8,6 +8,7 @@
     transition: left 0.5s linear;
     display: flex;
     flex-direction: column;
+    z-index: 5;
 }
 
 .sidebar.open {
