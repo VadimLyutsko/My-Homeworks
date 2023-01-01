@@ -43,28 +43,33 @@ const HW13 = () => {
             })
             .catch((e) => {
                 // дописать
-                console.log(e);
-                if (e.request.status === 400) {
-                    setCode('Ошибка 400!');
-                    setImage(error400);
-                    setInfo('');
-                    setText('Ты не отправил success в body вообще!\n' +
-                        'ошибка 400 - обычно означает что скорее всего фронт отправил что-то не то на бэк!');
+                switch (e.request.status) {
+                    case 400: {
+                        setCode('Ошибка 400!');
+                        setImage(error400);
+                        setInfo('');
+                        setText('Ты не отправил success в body вообще!\n' +
+                            'ошибка 400 - обычно означает что скорее всего фронт отправил что-то не то на бэк!');
+                        return;
+                    }
+                    case 500: {
+                        setCode('Ошибка 500!');
+                        setImage(error500);
+                        setInfo('');
+                        setText('эмитация ошибки на сервере\n' +
+                            'ошибка 500 - обычно означает что что-то сломалось на сервере, например база данных)');
+                        return;
+                    }
+                    case 0 : {
+                        setCode('Error!');
+                        setImage(errorUnknown);
+                        setInfo('');
+                        setText('Network Error AxiosError');
+                        return;
+                    }
+                    default :
+                        break;
                 }
-                if (e.request.status === 500) {
-                    setCode('Ошибка 500!');
-                    setImage(error500);
-                    setInfo('');
-                    setText('эмитация ошибки на сервере\n' +
-                        'ошибка 500 - обычно означает что что-то сломалось на сервере, например база данных)');
-                }
-                if (e.request.status === 0) {
-                    setCode('Error!');
-                    setImage(errorUnknown);
-                    setInfo('');
-                    setText('Network Error AxiosError');
-                }
-
             });
     };
 
