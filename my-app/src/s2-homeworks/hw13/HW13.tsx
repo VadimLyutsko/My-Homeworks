@@ -45,10 +45,11 @@ const HW13 = () => {
                 // дописать
                 console.log(e);
                 if (e.request.status === 400) {
-                    setCode('Error!');
+                    setCode('Ошибка 400!');
                     setImage(error400);
                     setInfo('');
-                    setText('Network Error AxiosError');
+                    setText('Ты не отправил success в body вообще!\n' +
+                        'ошибка 400 - обычно означает что скорее всего фронт отправил что-то не то на бэк!');
                 }
                 if (e.request.status === 500) {
                     setCode('Ошибка 500!');
