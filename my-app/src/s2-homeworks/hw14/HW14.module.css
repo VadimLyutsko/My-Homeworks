@@ -1,0 +1,34 @@
+.tech {
+display: flex;
+
+}
+
+.hw14{
+    width: 500px;
+    height: 250px;
+    margin-bottom: 50px;
+}
+
+
+.loading {
+    font-size: 24px;
+    font-weight: 600;
+    display: flex;
+    justify-content: end;
+    letter-spacing: 2px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #a6aada;
+    box-sizing: border-box;
+    animation: spotlight 2s linear infinite alternate;
+}
+
+@keyframes spotlight {
+    0% , 20% {
+        opacity: 1;
+        letter-spacing: 2px;
+    }
+    80% , 100% {
+        opacity: 0;
+        letter-spacing: 32px;
+    }
+}
